@@ -13,7 +13,7 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: "twitter-openapi/dist/*",
+          src: "twitter-openapi/dist/docs/*",
           dest: "assets/openapi",
         },
       ],
