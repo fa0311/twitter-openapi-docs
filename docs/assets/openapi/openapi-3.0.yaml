@@ -1,6 +1,20 @@
 components:
   schemas: {}
   securitySchemes:
+    ActiveUser:
+      description: 'yes'
+      in: header
+      name: x-twitter-active-user
+      type: apiKey
+    BearerAuth:
+      description: AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA
+      scheme: bearer
+      type: http
+    ClientLanguage:
+      description: en
+      in: header
+      name: x-twitter-client-language
+      type: apiKey
     CookieAuthToken:
       description: HttpOnly cookie
       in: cookie
@@ -16,6 +30,17 @@ components:
       in: header
       name: x-csrf-token
       type: apiKey
+    UserAgent:
+      description: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/112.0.0.0 Safari/537.36
+      in: header
+      name: user-agent
+      type: apiKey
+    authType:
+      description: OAuth2Session if you are logged in
+      in: header
+      name: x-twitter-auth-type
+      type: apiKey
 info:
   contact:
     email: yuki@yuki0311.com
@@ -28,6 +53,8 @@ info:
   version: 0.0.1
 openapi: 3.0.3
 paths:
+  /1RyAhNwby-gzGCRVsMxKbQ/CreateTweet:
+    $ref: ./paths/post.yaml#/paths/~11RyAhNwby-gzGCRVsMxKbQ~1CreateTweet
   /2TemLyqrMpTeAmysdbnVqw/ListLatestTweetsTimeline:
     $ref: ./paths/timeline.yaml#/paths/~12TemLyqrMpTeAmysdbnVqw~1ListLatestTweetsTimeline
   /5fmEkRT-1AdHqEsbVgehMg/Likes:
@@ -42,10 +69,20 @@ paths:
     $ref: ./paths/follow.yaml#/paths/~1IWP6Zt14sARO29lJT35bBw~1Following
   /RIWc55YCNyUJ-U3HHGYkdg/UserTweetsAndReplies:
     $ref: ./paths/usertweets.yaml#/paths/~1RIWc55YCNyUJ-U3HHGYkdg~1UserTweetsAndReplies
+  /VaenaVgh5q5ih7kvyVjgtg/DeleteTweet:
+    $ref: ./paths/post.yaml#/paths/~1VaenaVgh5q5ih7kvyVjgtg~1DeleteTweet
   /YqiE3JL1KNgf9nSljYdxaA/UserMedia:
     $ref: ./paths/usertweets.yaml#/paths/~1YqiE3JL1KNgf9nSljYdxaA~1UserMedia
+  /ZYKSe-w7KEslx3JhSIk5LA/UnfavoriteTweet:
+    $ref: ./paths/post.yaml#/paths/~1ZYKSe-w7KEslx3JhSIk5LA~1UnfavoriteTweet
   /djdTXDIk2qhd4OStqlUFeQ/Followers:
     $ref: ./paths/follow.yaml#/paths/~1djdTXDIk2qhd4OStqlUFeQ~1Followers
+  /iQtK4dl5hBmXewYZuEOKVw/DeleteRetweet:
+    $ref: ./paths/post.yaml#/paths/~1iQtK4dl5hBmXewYZuEOKVw~1DeleteRetweet
+  /lI07N6Otwv1PhnEgXILM7A/FavoriteTweet:
+    $ref: ./paths/post.yaml#/paths/~1lI07N6Otwv1PhnEgXILM7A~1FavoriteTweet
+  /ojPdsZsimiJrUGLR1sjUtA/CreateRetweet:
+    $ref: ./paths/post.yaml#/paths/~1ojPdsZsimiJrUGLR1sjUtA~1CreateRetweet
   /sLVLhk0bGj3MVFEKTdax1w/UserByScreenName:
     $ref: ./paths/user.yaml#/paths/~1sLVLhk0bGj3MVFEKTdax1w~1UserByScreenName
   /tmd4ifV8RHltzn8ymGg1aw/Bookmarks:
