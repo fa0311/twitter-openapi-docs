@@ -38,18 +38,20 @@ info:
   version: 0.0.1
 openapi: 3.0.3
 paths:
-  /IWP6Zt14sARO29lJT35bBw/Following:
+  /graphql/IWP6Zt14sARO29lJT35bBw/Following:
     get:
       description: get user list of following
       operationId: getFollowing
       parameters:
-      - in: query
+      - content:
+          application/json:
+            schema:
+              default: IWP6Zt14sARO29lJT35bBw
+              example: IWP6Zt14sARO29lJT35bBw
+              type: string
+        in: query
         name: queryId
         required: true
-        schema:
-          default: IWP6Zt14sARO29lJT35bBw
-          example: IWP6Zt14sARO29lJT35bBw
-          type: string
       - content:
           application/json:
             schema:
@@ -189,12 +191,6 @@ paths:
             x-connection-hash:
               schema:
                 type: string
-            x-content-type-options:
-              schema:
-                type: string
-            x-frame-options:
-              schema:
-                type: string
             x-rate-limit-limit:
               schema:
                 type: integer
@@ -216,23 +212,22 @@ paths:
             x-twitter-response-tags:
               schema:
                 type: string
-            x-xss-protection:
-              schema:
-                type: integer
       tags:
-      - UserList
-  /djdTXDIk2qhd4OStqlUFeQ/Followers:
+      - userList
+  /graphql/djdTXDIk2qhd4OStqlUFeQ/Followers:
     get:
       description: get user list of followers
       operationId: getFollowers
       parameters:
-      - in: query
+      - content:
+          application/json:
+            schema:
+              default: djdTXDIk2qhd4OStqlUFeQ
+              example: djdTXDIk2qhd4OStqlUFeQ
+              type: string
+        in: query
         name: queryId
         required: true
-        schema:
-          default: djdTXDIk2qhd4OStqlUFeQ
-          example: djdTXDIk2qhd4OStqlUFeQ
-          type: string
       - content:
           application/json:
             schema:
@@ -372,12 +367,6 @@ paths:
             x-connection-hash:
               schema:
                 type: string
-            x-content-type-options:
-              schema:
-                type: string
-            x-frame-options:
-              schema:
-                type: string
             x-rate-limit-limit:
               schema:
                 type: integer
@@ -399,8 +388,5 @@ paths:
             x-twitter-response-tags:
               schema:
                 type: string
-            x-xss-protection:
-              schema:
-                type: integer
       tags:
-      - UserList
+      - userList

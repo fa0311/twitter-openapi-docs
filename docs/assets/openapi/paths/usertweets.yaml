@@ -32,18 +32,20 @@ info:
   version: 0.0.1
 openapi: 3.0.3
 paths:
-  /5fmEkRT-1AdHqEsbVgehMg/Likes:
+  /graphql/5fmEkRT-1AdHqEsbVgehMg/Likes:
     get:
       description: get user likes tweets
       operationId: getLikes
       parameters:
-      - in: query
+      - content:
+          application/json:
+            schema:
+              default: 5fmEkRT-1AdHqEsbVgehMg
+              example: 5fmEkRT-1AdHqEsbVgehMg
+              type: string
+        in: query
         name: queryId
         required: true
-        schema:
-          default: 5fmEkRT-1AdHqEsbVgehMg
-          example: 5fmEkRT-1AdHqEsbVgehMg
-          type: string
       - content:
           application/json:
             schema:
@@ -203,12 +205,6 @@ paths:
             x-connection-hash:
               schema:
                 type: string
-            x-content-type-options:
-              schema:
-                type: string
-            x-frame-options:
-              schema:
-                type: string
             x-rate-limit-limit:
               schema:
                 type: integer
@@ -230,23 +226,22 @@ paths:
             x-twitter-response-tags:
               schema:
                 type: string
-            x-xss-protection:
-              schema:
-                type: integer
       tags:
-      - Tweet
-  /HuTx74BxAnezK1gWvYY7zg/UserTweets:
+      - tweet
+  /graphql/HuTx74BxAnezK1gWvYY7zg/UserTweets:
     get:
       description: get user tweets
       operationId: getUserTweets
       parameters:
-      - in: query
+      - content:
+          application/json:
+            schema:
+              default: HuTx74BxAnezK1gWvYY7zg
+              example: HuTx74BxAnezK1gWvYY7zg
+              type: string
+        in: query
         name: queryId
         required: true
-        schema:
-          default: HuTx74BxAnezK1gWvYY7zg
-          example: HuTx74BxAnezK1gWvYY7zg
-          type: string
       - content:
           application/json:
             schema:
@@ -401,12 +396,6 @@ paths:
             x-connection-hash:
               schema:
                 type: string
-            x-content-type-options:
-              schema:
-                type: string
-            x-frame-options:
-              schema:
-                type: string
             x-rate-limit-limit:
               schema:
                 type: integer
@@ -428,23 +417,22 @@ paths:
             x-twitter-response-tags:
               schema:
                 type: string
-            x-xss-protection:
-              schema:
-                type: integer
       tags:
-      - Tweet
-  /RIWc55YCNyUJ-U3HHGYkdg/UserTweetsAndReplies:
+      - tweet
+  /graphql/RIWc55YCNyUJ-U3HHGYkdg/UserTweetsAndReplies:
     get:
       description: get user replies tweets
       operationId: getUserTweetsAndReplies
       parameters:
-      - in: query
+      - content:
+          application/json:
+            schema:
+              default: RIWc55YCNyUJ-U3HHGYkdg
+              example: RIWc55YCNyUJ-U3HHGYkdg
+              type: string
+        in: query
         name: queryId
         required: true
-        schema:
-          default: RIWc55YCNyUJ-U3HHGYkdg
-          example: RIWc55YCNyUJ-U3HHGYkdg
-          type: string
       - content:
           application/json:
             schema:
@@ -599,12 +587,6 @@ paths:
             x-connection-hash:
               schema:
                 type: string
-            x-content-type-options:
-              schema:
-                type: string
-            x-frame-options:
-              schema:
-                type: string
             x-rate-limit-limit:
               schema:
                 type: integer
@@ -626,23 +608,22 @@ paths:
             x-twitter-response-tags:
               schema:
                 type: string
-            x-xss-protection:
-              schema:
-                type: integer
       tags:
-      - Tweet
-  /YqiE3JL1KNgf9nSljYdxaA/UserMedia:
+      - tweet
+  /graphql/YqiE3JL1KNgf9nSljYdxaA/UserMedia:
     get:
       description: get user media tweets
       operationId: getUserMedia
       parameters:
-      - in: query
+      - content:
+          application/json:
+            schema:
+              default: YqiE3JL1KNgf9nSljYdxaA
+              example: YqiE3JL1KNgf9nSljYdxaA
+              type: string
+        in: query
         name: queryId
         required: true
-        schema:
-          default: YqiE3JL1KNgf9nSljYdxaA
-          example: YqiE3JL1KNgf9nSljYdxaA
-          type: string
       - content:
           application/json:
             schema:
@@ -802,12 +783,6 @@ paths:
             x-connection-hash:
               schema:
                 type: string
-            x-content-type-options:
-              schema:
-                type: string
-            x-frame-options:
-              schema:
-                type: string
             x-rate-limit-limit:
               schema:
                 type: integer
@@ -829,8 +804,5 @@ paths:
             x-twitter-response-tags:
               schema:
                 type: string
-            x-xss-protection:
-              schema:
-                type: integer
       tags:
-      - Tweet
+      - tweet

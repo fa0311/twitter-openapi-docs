@@ -17,18 +17,20 @@ info:
   version: 0.0.1
 openapi: 3.0.3
 paths:
-  /sLVLhk0bGj3MVFEKTdax1w/UserByScreenName:
+  /graphql/sLVLhk0bGj3MVFEKTdax1w/UserByScreenName:
     get:
       description: get user by screen name
       operationId: getUserByScreenName
       parameters:
-      - in: query
+      - content:
+          application/json:
+            schema:
+              default: sLVLhk0bGj3MVFEKTdax1w
+              example: sLVLhk0bGj3MVFEKTdax1w
+              type: string
+        in: query
         name: queryId
         required: true
-        schema:
-          default: sLVLhk0bGj3MVFEKTdax1w
-          example: sLVLhk0bGj3MVFEKTdax1w
-          type: string
       - content:
           application/json:
             schema:
@@ -93,12 +95,6 @@ paths:
             x-connection-hash:
               schema:
                 type: string
-            x-content-type-options:
-              schema:
-                type: string
-            x-frame-options:
-              schema:
-                type: string
             x-rate-limit-limit:
               schema:
                 type: integer
@@ -120,8 +116,5 @@ paths:
             x-twitter-response-tags:
               schema:
                 type: string
-            x-xss-protection:
-              schema:
-                type: integer
       tags:
-      - User
+      - user
