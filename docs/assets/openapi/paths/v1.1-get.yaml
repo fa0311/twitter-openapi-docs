@@ -110,9 +110,9 @@ paths:
         name: user_id
         required: true
         schema:
-          default: 17152334
-          example: 17152334
-          type: integer
+          default: '44196397'
+          example: '44196397'
+          type: string
       - in: query
         name: count
         required: true
@@ -190,8 +190,8 @@ paths:
         name: q
         required: true
         schema:
-          default: aaa
-          example: aaa
+          default: test
+          example: test
           type: string
       - in: query
         name: src
