@@ -1,0 +1,33 @@
+name: Builder
+
+on:
+  schedule:
+    - cron: "0 21 * * *"
+
+jobs:
+  generator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: Update submodules
+        id: update
+        run: git submodule update --remote --recursive
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run build
+      - name: git setting
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Commit files
+        run: |
+          git add .
+          git commit -m "Github Action" -a
+          git pull
+          git push origin master
