@@ -53,10 +53,8 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-
-      - name: Commit files
-        run: |
           git add .
           git commit -m "Github Action" -a
           git pull
           git push origin master
+        continue-on-error: true
