@@ -1,7 +1,7 @@
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 import SwaggerUI from "swagger-ui-react";
 import "swagger-ui-react/swagger-ui.css";
-
+import { FaGithub } from "react-icons/fa6";
 const App = () => {
   const urlList = [
     "https://raw.githubusercontent.com/fa0311/twitter-openapi/main/dist/docs/openapi-3.0.yaml",
@@ -13,6 +13,24 @@ const App = () => {
 
   return (
     <>
+      <div
+        style={{
+          position: "fixed",
+          top: 5,
+          right: 5,
+          borderRadius: "50%",
+          width: 32,
+          height: 32,
+          backgroundColor: "white",
+        }}
+      >
+        <a
+          href="https://github.com/fa0311/twitter-openapi-docs"
+          style={{ color: "black" }}
+        >
+          <FaGithub size={32} />
+        </a>
+      </div>
       <div className="swagger-ui">
         <span className="servers-title">URL</span>
         <div className="servers">
